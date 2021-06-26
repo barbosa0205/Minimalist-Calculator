@@ -139,9 +139,21 @@ header a {
 	}
 
 	.sidebar {
-	left: 0;
-	width: 30%;
+		left: 0;
+		width: 30%;
 
-	height: 100vh;
+		height: 100vh;
+	}
+}
+@media (min-width: 1024px) {
+	.calculator-container {
+		width: 50%;
+		margin: 0 auto;
+	}
+}
+@media (min-width: 1300px) {
+	.calculator {
+		grid-template-columns: repeat(4, minmax(auto, 100px));
+		grid-template-rows: 70px repeat(5, 100px);
 	}
 }
