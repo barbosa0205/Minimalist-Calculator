@@ -1,6 +1,7 @@
 //Menu
 const btnMenu = document.querySelector('#btn-menu');
 const sidebar = document.querySelector('.sidebar');
+const mainContainer = document.querySelector('.main-container')
 
 let open = false;
 
@@ -14,4 +15,6 @@ const closeMenu = () => {
 	return (open = false);
 };
 
-btnMenu.addEventListener('click', () => (open ? closeMenu() : openMenu()));
+btnMenu.addEventListener('click', () => openMenu());
+mainContainer.addEventListener('click', () => closeMenu())
+
