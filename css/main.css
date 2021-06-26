@@ -48,7 +48,6 @@ header a {
 
 .main-container {
 	display: flex;
-	justify-content: center;
 	width: auto;
 	min-height: 600px;
 	height: 100vh;
@@ -68,6 +67,12 @@ header a {
 		#af00aa,
 		#8900b9
 	);
+}
+
+.calculator-container {
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }
 
 .calculator {
@@ -121,4 +126,22 @@ header a {
 
 .btn-ac {
 	grid-column: 1/3;
+}
+
+@media (min-width: 768px) {
+	header {
+		display: none;
+	}
+
+	.calculator {
+		margin: 0;
+		margin-left: 40%;
+	}
+
+	.sidebar {
+	left: 0;
+	width: 30%;
+
+	height: 100vh;
+	}
 }
