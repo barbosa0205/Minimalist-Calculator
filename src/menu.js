@@ -15,6 +15,6 @@ const closeMenu = () => {
 	return (open = false);
 };
 
-btnMenu.addEventListener('click', () => openMenu());
+btnMenu.addEventListener('click', () => open ? closeMenu(): openMenu());
 mainContainer.addEventListener('click', () => closeMenu())
 
