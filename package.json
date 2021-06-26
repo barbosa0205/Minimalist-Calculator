@@ -1,0 +1,17 @@
+{
+  "name": "calculadora-jsv",
+  "version": "1.0.0",
+  "description": "calculadora de practica",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "calculator"
+  ],
+  "author": "@barbosa0205",
+  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
