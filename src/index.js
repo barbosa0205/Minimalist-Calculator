@@ -39,6 +39,9 @@ const clearDisplay = () => {
 
 const updateDisplay = (res) => {
 	result.innerHTML = res;
+	opAnterior = ''
+	opActual = ''
+	operator = ''
 };
 
 const calculate = (op1, op2, operator) => {
