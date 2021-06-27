@@ -37,7 +37,6 @@ const clearDisplay = () => {
 	opAnterior = '';
 	opActual = '';
 	operator = '';
-	operationContainer.textContent = '';
 };
 
 const updateDisplay = (res) => {
