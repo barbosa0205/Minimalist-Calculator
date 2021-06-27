@@ -60,10 +60,6 @@ header a {
 }
 
 .operations-container {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	width: 100%;
 	height: 50%;
 	overflow-y: scroll;
@@ -72,11 +68,40 @@ header a {
 	display: none;
 }
 
-.operations-container p {
+.clear-operations {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	height: 40px;
+	visibility: hidden;
+}
+
+.clear-operations i {
+	padding: 20px;
+	font-size: 2rem;
+	color: #fdfdfd;
+	text-shadow: 0 0 2px rgb(167, 167, 167);
+	cursor: pointer;
+}
+
+.operations {
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 100px;
+}
+
+.trash-visible {
+	visibility: visible;
+}
+
+.operations p {
 	font-size: 2.5rem;
 	padding: 10px 0;
 	color: #fff;
-	text-shadow: 0 0 1px rgb(0, 0, 0);
+	text-shadow: 0 0 1px rgb(158, 158, 158);
 	text-align: center;
 }
 

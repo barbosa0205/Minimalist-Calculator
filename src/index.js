@@ -6,10 +6,14 @@ const btnEqual = document.querySelector('#btn-equal');
 const btnAc = document.querySelector('#btn-ac');
 const result = document.querySelector('#result');
 const operationContainer = document.querySelector('.operations-container');
+const btnClearHistory = document.querySelector('#clear-history');
+const operations = document.querySelector('.operations');
+const clearOperations = document.querySelector('.clear-operations');
 
 let opActual = '';
 let opAnterior = '';
 let operator = '';
+
 const printNumber = (num) => {
 	result.innerHTML += `${num}`;
 	if (operator === '') {
@@ -52,7 +56,10 @@ const updateDisplay = (res) => {
 };
 
 const updateResults = (op1, op2, operator, result) => {
-	operationContainer.innerHTML += ` <p>${op1} ${operator} ${op2} = ${result}</p>`;
+	operations.innerHTML += ` <p>${op1} ${operator} ${op2} = ${result}</p>`;
+	if (operations !== '') {
+		clearOperations.className += ' trash-visible';
+	}
 };
 
 const calculate = (op1, op2, operator) => {
@@ -70,6 +77,11 @@ const calculate = (op1, op2, operator) => {
 	updateDisplay(result);
 };
 
+const clearHistory = () => {
+	operations.innerHTML = '';
+	clearOperations.classList.remove('trash-visible');
+};
+
 btnNumber.forEach((btn) =>
 	btn.addEventListener('click', () => printNumber(btn.innerText))
 );
@@ -82,3 +94,5 @@ btnEqual.addEventListener('click', () => {
 });
 
 btnAc.addEventListener('click', () => clearDisplay());
+
+btnClearHistory.addEventListener('click', () => clearHistory());
