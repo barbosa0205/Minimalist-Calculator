@@ -10,6 +10,7 @@ const btnClearHistory = document.querySelector('#clear-history');
 const operations = document.querySelector('.operations');
 const clearOperations = document.querySelector('.clear-operations');
 let resultCondition = false;
+let dotCondition = false;
 
 let opActual = '';
 let opAnterior = '';
@@ -23,6 +24,10 @@ const printNumber = (num, res) => {
 		operator = '';
 		resultCondition = false;
 	}
+	if (num === '.' && opAnterior == '') {
+		return;
+	}
+
 	if (operator === '') {
 		opAnterior += num;
 	}
