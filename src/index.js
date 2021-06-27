@@ -10,13 +10,14 @@ let opActual = '';
 let opAnterior = '';
 let operator = '';
 const printNumber = (num) => {
+	result.innerHTML += `${num}`;
 	if (operator === '') {
-		opAnterior = parseFloat(num);
+		opAnterior += num;
 	}
 	if (operator !== '') {
-		opActual = parseFloat(num);
+		opActual += num;
 	}
-	result.innerHTML += `${num}`;
+	parseFloat(num);
 };
 const printOperation = (op) => {
 	if (opAnterior === '') return;
@@ -38,7 +39,13 @@ const clearDisplay = () => {
 
 const updateDisplay = (res) => {
 	opAnterior = res;
-	result.innerHTML = res;
+	opActual = '';
+	if (isNaN(res)) {
+		result.innerHTML = `<b>ERROR</b>`;
+		opAnterior = 0;
+	} else {
+		result.innerHTML = res;
+	}
 };
 
 const calculate = (op1, op2, operator) => {
@@ -50,7 +57,6 @@ const calculate = (op1, op2, operator) => {
 	if (operator === 'X') result = op1 * op2;
 	if (operator === '/') result = op1 / op2;
 	if (operator === '%') result = op1 % op2;
-
 	result = parseFloat(result.toFixed(2));
 	updateDisplay(result);
 };
