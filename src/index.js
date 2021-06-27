@@ -57,6 +57,7 @@ const updateResults = (op1, op2, operator, result) => {
 };
 
 const calculate = (op1, op2, operator) => {
+	if (operator === '' && op2 === '') return;
 	let result = 0;
 	op1 = parseFloat(op1);
 	op2 = parseFloat(op2);
