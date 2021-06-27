@@ -14,6 +14,24 @@ html {
 	font-family: JetBrains Mono;
 }
 
+body {
+	background-image: linear-gradient(
+		to left bottom,
+		#2da5da,
+		#579be8,
+		#8e8be7,
+		#c175d4,
+		#e75caf,
+		#eb4b9f,
+		#ee378e,
+		#ef1c7b,
+		#e0008a,
+		#cb0099,
+		#af00aa,
+		#8900b9
+	);
+}
+
 a {
 	text-decoration: none;
 	color: #ffff;
@@ -114,23 +132,8 @@ header a {
 	display: flex;
 	width: auto;
 	min-height: 600px;
-	height: 100vh;
+	min-height: 100vh;
 	padding-top: 15vh;
-	background-image: linear-gradient(
-		to left bottom,
-		#2da5da,
-		#579be8,
-		#8e8be7,
-		#c175d4,
-		#e75caf,
-		#eb4b9f,
-		#ee378e,
-		#ef1c7b,
-		#e0008a,
-		#cb0099,
-		#af00aa,
-		#8900b9
-	);
 }
 
 .calculator-container {

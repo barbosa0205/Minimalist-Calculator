@@ -9,19 +9,27 @@ const operationContainer = document.querySelector('.operations-container');
 const btnClearHistory = document.querySelector('#clear-history');
 const operations = document.querySelector('.operations');
 const clearOperations = document.querySelector('.clear-operations');
+let resultCondition = false;
 
 let opActual = '';
 let opAnterior = '';
 let operator = '';
 
-const printNumber = (num) => {
-	result.innerHTML += `${num}`;
+const printNumber = (num, res) => {
+	if (res) {
+		result.innerHTML = '';
+		opAnterior = '';
+		opActual = '';
+		operator = '';
+		resultCondition = false;
+	}
 	if (operator === '') {
 		opAnterior += num;
 	}
 	if (operator !== '') {
 		opActual += num;
 	}
+	result.innerHTML += `${num}`;
 	parseFloat(num);
 };
 const printOperation = (op) => {
@@ -53,6 +61,7 @@ const updateDisplay = (res) => {
 	} else {
 		result.innerHTML = res;
 	}
+	resultCondition = true;
 };
 
 const updateResults = (op1, op2, operator, result) => {
@@ -83,7 +92,9 @@ const clearHistory = () => {
 };
 
 btnNumber.forEach((btn) =>
-	btn.addEventListener('click', () => printNumber(btn.innerText))
+	btn.addEventListener('click', () =>
+		printNumber(btn.innerText, resultCondition)
+	)
 );
 btnOperation.forEach((btn) =>
 	btn.addEventListener('click', () => printOperation(btn.innerText))
