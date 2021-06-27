@@ -5,6 +5,7 @@ const btnDot = document.querySelector('#btn-dot');
 const btnEqual = document.querySelector('#btn-equal');
 const btnAc = document.querySelector('#btn-ac');
 const result = document.querySelector('#result');
+const operationContainer = document.querySelector('.operations-container');
 
 let opActual = '';
 let opAnterior = '';
@@ -21,6 +22,7 @@ const printNumber = (num) => {
 };
 const printOperation = (op) => {
 	if (opAnterior === '') return;
+	if (operator !== '') return;
 	else {
 		operator = op;
 	}
@@ -35,10 +37,12 @@ const clearDisplay = () => {
 	opAnterior = '';
 	opActual = '';
 	operator = '';
+	operationContainer.textContent = '';
 };
 
 const updateDisplay = (res) => {
 	opAnterior = res;
+	operator = '';
 	opActual = '';
 	if (isNaN(res)) {
 		result.innerHTML = `<b>ERROR</b>`;
@@ -46,6 +50,10 @@ const updateDisplay = (res) => {
 	} else {
 		result.innerHTML = res;
 	}
+};
+
+const updateResults = (op1, op2, operator, result) => {
+	operationContainer.innerHTML += ` <p>${op1} ${operator} ${op2} = ${result}</p>`;
 };
 
 const calculate = (op1, op2, operator) => {
@@ -58,6 +66,7 @@ const calculate = (op1, op2, operator) => {
 	if (operator === '/') result = op1 / op2;
 	if (operator === '%') result = op1 % op2;
 	result = parseFloat(result.toFixed(2));
+	updateResults(op1, op2, operator, result);
 	updateDisplay(result);
 };
 
