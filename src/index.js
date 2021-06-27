@@ -11,17 +11,16 @@ let opAnterior = '';
 let operator = '';
 const printNumber = (num) => {
 	if (operator === '') {
-		opAnterior += num;
-	} else {
-		opActual += num;
+		opAnterior = parseFloat(num);
+	}
+	if (operator !== '') {
+		opActual = parseFloat(num);
 	}
 	result.innerHTML += `${num}`;
 };
 const printOperation = (op) => {
 	if (opAnterior === '') return;
-	if (operator !== '') {
-		return;
-	} else {
+	else {
 		operator = op;
 	}
 	if (op.innerHTML == 'X') {
@@ -38,10 +37,8 @@ const clearDisplay = () => {
 };
 
 const updateDisplay = (res) => {
+	opAnterior = res;
 	result.innerHTML = res;
-	opAnterior = ''
-	opActual = ''
-	operator = ''
 };
 
 const calculate = (op1, op2, operator) => {
